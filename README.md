@@ -10,7 +10,7 @@ The library uses the [OMDb API](https://www.omdbapi.com/) and requires you to ha
 You can then import the central `imdbMovieTasteDecider`-class and create an instance of it by passing in your API key as a string like this:
 
 ```typescript
-import { imdbMovieTasteDecider } from 'movieTasteDecider'
+import { imdbMovieTasteDecider } from 'movie-taste-decider'
 
 let tasteDecider = new imdbMovieTasteDecider("yourOmdbApiKey")
 ```

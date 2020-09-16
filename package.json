@@ -1,8 +1,9 @@
 {
   "name": "movie-taste-decider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A library with which movies can be set as favorites and a movie taste score can be calculated",
-  "main": "index.js",
+  "main": "build/movie-taste-decider.js",
+  "types": "build/movie-taste-decider.d.ts",
   "scripts": {
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node --experimental-repl-await build/index.js",
@@ -10,6 +11,10 @@
   },
   "author": "Robin Lichtenthäler",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r0light/movie-taste-decider"
+   },
   "devDependencies": {
     "@types/jest": "^26.0.13",
     "@types/node": "^14.10.0",
