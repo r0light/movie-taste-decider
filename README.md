@@ -7,9 +7,9 @@ This is a small NodeJS library written in TypeScript which enables searching for
 ## How to use
 
 The library uses the [OMDb API](https://www.omdbapi.com/) and requires you to have an API key for it.
-You can then import the central `imdbMovieTasteDecider`-class and create an instance of it like this:
+You can then import the central `imdbMovieTasteDecider`-class and create an instance of it by passing in your API key as a string like this:
 
-```javascript
+```typescript
 import { imdbMovieTasteDecider } from 'movieTasteDecider'
 
 let tasteDecider = new imdbMovieTasteDecider("yourOmdbApiKey")
@@ -17,7 +17,7 @@ let tasteDecider = new imdbMovieTasteDecider("yourOmdbApiKey")
 
 `imdbMovieTasteDecider` implements the `movieTasteDecider`-Interface which looks like the following:
 
-```javascript
+```typescript
 export interface movieTasteDecider {
     searchForMovie(movieName: string): Promise<movie[]>
     getDetailsForMovie(imdbId: string): Promise<detailedMovie>
@@ -34,7 +34,7 @@ And you can therefore use all the functions available in the interface.
 The library stores your favorites on the file systems at the following place as a default: `~/.movie-taste-decider/favorites.json`
 If you want to specify another place, you can also do that via the constructor, for example:
 
-```javascript
+```typescript
 import { imdbMovieTasteDecider } from 'movieTasteDecider'
 
 let tasteDecider = new imdbMovieTasteDecider("yourOmdbApiKey", "/home/me/customDirectory")
