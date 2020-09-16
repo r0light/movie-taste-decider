@@ -37,6 +37,7 @@ export class favoritesManager implements favorites {
     }
     removeFromFavorites(id: string) {
         try {
+            makeSureFileExists(this.filePath)
             let favorites = readFavorites(this.filePath)
             let updatedFavorites = favorites.filter(fav => fav.id !== id)
             if (favorites.length !== updatedFavorites.length) {
@@ -48,6 +49,7 @@ export class favoritesManager implements favorites {
     }
     getAllFavorites() {
         try {
+            makeSureFileExists(this.filePath)
             return readFavorites(this.filePath)
         } catch (err) {
             return { name: "FavoritesError", message: "Could not read favorites", cause: err } as FavoritesError
@@ -55,6 +57,7 @@ export class favoritesManager implements favorites {
     }
     clearFavorites() {
         try {
+            makeSureFileExists(this.filePath)
             writeFavorites(this.filePath, [])
         } catch (err) {
             return { name: "FavoritesError", message: "Could not clear favorites", cause: err } as FavoritesError
@@ -68,7 +71,7 @@ function makeSureFileExists(filePath: string) {
     } else {
         let dirPath = filePath.slice(0, filePath.lastIndexOf("/"))
         fs.mkdirSync(dirPath, { recursive: true })
-        fs.writeFileSync(filePath, "", { encoding: 'utf8' });
+        fs.writeFileSync(filePath, "[]", { encoding: 'utf8' });
         return
     }
 }

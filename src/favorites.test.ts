@@ -30,6 +30,20 @@ test('reading favorites should return all saved favorites', () => {
     expect(favorites.getAllFavorites()).toEqual(favoriteMovies)
 })
 
+test('calling listFavorites first should result in empty array', () => {
+    const tmpDir = tmp.dirSync().name
+
+    let favorites = new favoritesManager(tmpDir)
+    expect(favorites.getAllFavorites()).toEqual([])
+})
+
+test('calling clear favorites first should result in empty array', () => {
+    const tmpDir = tmp.dirSync().name
+
+    let favorites = new favoritesManager(tmpDir)
+    expect(favorites.getAllFavorites()).toEqual([])
+})
+
 test('adding favorite twice should not result in duplicates', () => {
     const tmpDir = tmp.dirSync().name
 

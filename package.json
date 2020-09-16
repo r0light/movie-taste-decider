@@ -1,6 +1,6 @@
 {
   "name": "movie-taste-decider",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A library with which movies can be set as favorites and a movie taste score can be calculated",
   "main": "build/movie-taste-decider.js",
   "types": "build/movie-taste-decider.d.ts",
