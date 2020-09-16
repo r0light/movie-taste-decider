@@ -1,0 +1,33 @@
+{
+  "name": "movie-taste-decider",
+  "version": "0.1.0",
+  "description": "A library with which movies can be set as favorites and a movie taste score can be calculated",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node --experimental-repl-await build/index.js",
+    "test": "npm run build && jest --coverage"
+  },
+  "author": "Robin Lichtenthäler",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "@types/node": "^14.10.0",
+    "@types/tmp": "^0.2.0",
+    "jest": "^26.4.2",
+    "rimraf": "^3.0.2",
+    "tmp": "^0.2.1",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "src"
+    ]
+  }
+}
